@@ -1,0 +1,137 @@
+@startuml
+class vida
+{
++vida:chocarmenosvida[1]
+}
+class cabeza 
+{
++cabeza:Dirije el cuerpo
+}
+class puntaje
+{
++puntaje:Frutascomidas
+}
+class logro
+{
++logros:Misionescompletadas
+}
+class inicial
+{
++inicial:dezplasamiento(x,y)
+}
+class jugador
+{
++jugador:numeropersona
+}
+class salir
+{
++salir:Abandonarjuego
+}
+class snake
+{
+-int puntaje[500]
+-int logro[5]
+-int vida[5]
+}
+class serpiente
+{
+-int color[5]
++serpiente:Animacion
+}
+class menu
+{
++menu:iluminacionclara
++menu:iluminacionoscura
+}
+class pausa 
+{
++Pausa:Detenertiempo(x,y)
+}
+class animacion 
+class mapa
+{
+-int obtaculo[2]
+-int niveles[5]
+-int cronometro[*]
+}
+class sonido 
+{
++sonido:Musica
+}
+class iluminacion
+{
++Iluminacion:clarayOscura
+}
+class obtaculo
+{
++obsctaculo:Tamaño(x,y)
+}
+class pared 
+{
+pared:Tamaño (x,y)
+}
+class muerte
+{
++muerte:Paredycuerpo
+}
+class comida 
+{
+-int puntaje[50]
++comida:10cada fruta
+}
+class nivel
+{
+-int nivel[10]
++nivel:Tieneobstaculos
+}
+class velocidad
+{
+-int velocidad(x,y)
+}
+class posicion 
+{
++posicion:aleatoria
++posicion:Defruta
+}
+class color
+{
++color:tiene3
+}
+class cronometro
+{
++cronometro:Tiempotranscurrido
+}
+class aleatorio
+{
++aleatorio:comida
+}
+mapa *-- nivel
+mapa *-- obstaculo
+mapa *-- pared
+mapa *-- cronometro
+mapa *-- sonido
+menu *-- jugador
+menu *-- sonido
+menu *-- iluminacion
+jugador *-- color
+serpiente *-- inicial
+serpiente *-- posicion
+serpiente *-- velocidad
+serpiente *-- animacion
+serpiente *-- color
+snake *-- puntaje
+snake *-- logro
+snake *-- serpiente
+snake *-- mapa
+snake *-- menu
+snake *-- pausa
+vida *-- cabeza
+cabeza *-- serpiente
+pausa *-- salir
+puntaje 0-- comida
+comida *-- posicion
+posicion 0-- aleatorio
+obtaculo <|-- serpiente
+pared <|-- muerte
+muerte <|-- serpiente
+@enduml
