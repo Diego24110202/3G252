@@ -1,0 +1,2 @@
+#pragma 
+typedef bool EstadoFoco;
