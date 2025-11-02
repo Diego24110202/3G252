@@ -1,0 +1,9 @@
+run : bin/animacion2
+	./bin/animacion2
+
+bin/animacion2 : src/animacion2.cpp
+	@mkdir -p bin
+	g++ -Iinclude -o bin/animacion2 src/animacion2.cpp -std=c++17 -lftxui-component -lftxui-dom -lftxui-screen
+
+clean:
+	rm -rf bin/animacion2
